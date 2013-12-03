@@ -34,8 +34,8 @@ class Solicitud extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('area, fecha, usuarioResponsable, proyecto, id_estado', 'required'),
-			array('usuarioResponsable, id_estado', 'numerical', 'integerOnly'=>true),
+			array('area, proyecto', 'required'),
+			array('usuarioResponsable', 'numerical', 'integerOnly'=>true),
 			array('area', 'length', 'max'=>100),
 			array('proyecto', 'length', 'max'=>200),
 			// The following rule is used by search().
@@ -113,4 +113,22 @@ class Solicitud extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
+        protected function beforeSave() {
+        if (parent::beforeSave()) {
+            //Yii::app()->user-id devuelve el login del usuario
+            $user = Usuario::model()->find(array(
+                'condition' => 'usuario = :usuario',
+                'params' => array(
+                    ':usuario' => Yii::app()->user->id,
+                ),
+            ));
+            if ($user !== NULL) {
+                $this->usuarioResponsable = $user->id;
+                return TRUE;
+            }
+            return FALSE;
+        }
+        return FALSE;
+    }
 }

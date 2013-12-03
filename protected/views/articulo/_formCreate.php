@@ -33,7 +33,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cotizacion'); ?>
-		<?php echo $form->checkBox($model,'cotizacion',array('checked'=>'1')); ?>
+                <?php echo $form->checkBox($model,'cotizacion',array('checked'=>'1')); ?>
 		<?php echo $form->error($model,'cotizacion'); ?>
 	</div>
 
@@ -47,42 +47,6 @@
 		<?php echo $form->labelEx($model,'descripcion'); ?>
 		<?php echo $form->textField($model,'descripcion',array('size'=>60,'maxlength'=>500)); ?>
 		<?php echo $form->error($model,'descripcion'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_solicitud'); ?>
-		<?php echo $form->textField($model,'id_solicitud'); ?>
-		<?php echo $form->error($model,'id_solicitud'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_proveedor'); ?>
-		<?php echo $form->textField($model,'id_proveedor'); ?>
-		<?php echo $form->error($model,'id_proveedor'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'precio'); ?>
-		<?php echo $form->textField($model,'precio',array('size'=>19,'maxlength'=>19)); ?>
-		<?php echo $form->error($model,'precio'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'tiempo_entrega'); ?>
-		<?php echo $form->textField($model,'tiempo_entrega',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'tiempo_entrega'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_garantia'); ?>
-		<?php echo $form->textField($model,'id_garantia'); ?>
-		<?php echo $form->error($model,'id_garantia'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_surtido'); ?>
-		<?php echo $form->textField($model,'fecha_surtido'); ?>
-		<?php echo $form->error($model,'fecha_surtido'); ?>
 	</div>
 
 	<div class="row buttons">

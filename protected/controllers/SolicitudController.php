@@ -32,12 +32,12 @@ class SolicitudController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'actions'=>array('create'),
+				'roles'=>array('normal'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete','update','create'),
+				'roles'=>array('administrador'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,8 @@ class SolicitudController extends Controller
 		if(isset($_POST['Solicitud']))
 		{
 			$model->attributes=$_POST['Solicitud'];
+                        $model->id_estado="1";
+                        $model->fecha=date('Y-m-d H:i:s');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

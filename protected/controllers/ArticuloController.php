@@ -32,8 +32,16 @@ class ArticuloController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
+				'actions'=>array('create'),
+				'roles'=>array('normal'),
+			),
+                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('update','admin'),
+				'roles'=>array('compras'),
+			),
+                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('update','create','delete','admin'),
+				'roles'=>array('administrador'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
@@ -60,7 +68,7 @@ class ArticuloController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreate($solicitud)
 	{
 		$model=new Articulo;
 
@@ -70,6 +78,7 @@ class ArticuloController extends Controller
 		if(isset($_POST['Articulo']))
 		{
 			$model->attributes=$_POST['Articulo'];
+                        $model->id_solicitud=$solicitud;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

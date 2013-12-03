@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+        array('label'=>'Agregar Articulo', 'url'=>array('articulo/create','solicitud'=>$model->id)),
 	array('label'=>'List Solicitud', 'url'=>array('index')),
 	array('label'=>'Create Solicitud', 'url'=>array('create')),
 	array('label'=>'Update Solicitud', 'url'=>array('update', 'id'=>$model->id)),
@@ -29,3 +30,14 @@ $this->menu=array(
 		'id_estado',
 	),
 )); ?>
+
+<?php foreach ($model->articulos as $articulo): ?>
+<div class="row">
+    <div class="articulo">
+        <h3><?php echo CHtml::encode($articulo->getAttributeLabel('Articulo')); ?></h3>
+        <div>Descripcion: <?php echo CHtml::encode($articulo->descripcion); ?></div>   
+        <div>Cantidad: <?php echo CHtml::encode($articulo->cantidad); ?></div>
+        <div>Unidad: <?php echo CHtml::encode($articulo->unidad); ?></div>   
+    </div>
+</div>
+<?php endforeach; ?>

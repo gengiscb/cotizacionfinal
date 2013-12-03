@@ -17,9 +17,9 @@
  */
 class Usuario extends CActiveRecord
 {
-	public $_contrasena2;
-    public $_confirmarContrasena;
-    public $_roles;
+        public $_contrasena2;
+        public $_confirmarContrasena;
+        public $_roles;
 	/**
 	 * @return string the associated database table name
 	 */

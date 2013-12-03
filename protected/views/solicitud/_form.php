@@ -26,29 +26,11 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'fecha'); ?>
-		<?php echo $form->textField($model,'fecha'); ?>
-		<?php echo $form->error($model,'fecha'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'usuarioResponsable'); ?>
-		<?php echo $form->textField($model,'usuarioResponsable'); ?>
-		<?php echo $form->error($model,'usuarioResponsable'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'proyecto'); ?>
 		<?php echo $form->textField($model,'proyecto',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'proyecto'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'id_estado'); ?>
-		<?php echo $form->textField($model,'id_estado'); ?>
-		<?php echo $form->error($model,'id_estado'); ?>
-	</div>
-
+        
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
