@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Proveedor', 'url'=>array('index')),
-	array('label'=>'Create Proveedor', 'url'=>array('create')),
-	array('label'=>'Update Proveedor', 'url'=>array('update', 'id'=>$model->folio)),
-	array('label'=>'Delete Proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->folio),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Proveedor', 'url'=>array('admin')),
+	array('label'=>'Lista Proveedor', 'url'=>array('index')),
+	array('label'=>'Crear Proveedor', 'url'=>array('create')),
+	array('label'=>'Actualizarå Proveedor', 'url'=>array('update', 'id'=>$model->folio)),
+	array('label'=>'Eliminar Proveedor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->folio),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Proveedor', 'url'=>array('admin')),
 );
 ?>
 

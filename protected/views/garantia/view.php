@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Garantia', 'url'=>array('index')),
-	array('label'=>'Create Garantia', 'url'=>array('create')),
-	array('label'=>'Update Garantia', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Garantia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Garantia', 'url'=>array('admin')),
+	array('label'=>'Lista Garantia', 'url'=>array('index')),
+	array('label'=>'Crear Garantia', 'url'=>array('create')),
+	array('label'=>'Actualizar Garantia', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Garantia', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Garantia', 'url'=>array('admin')),
 );
 ?>
 

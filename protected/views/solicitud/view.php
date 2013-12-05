@@ -13,7 +13,7 @@ $this->menu=array(
 	array('label'=>'Crear Solicitud', 'url'=>array('create')),
 	array('label'=>'Actualizar Solicitud', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Borrar Solicitud', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'¿Realmente desea eliminar la solicitud?')),
-	array('label'=>'Administrador Solicitud', 'url'=>array('admin')),
+	array('label'=>'Administrar Solicitud', 'url'=>array('admin')),
 );
 ?>
 

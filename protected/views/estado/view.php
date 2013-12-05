@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Estado', 'url'=>array('index')),
-	array('label'=>'Create Estado', 'url'=>array('create')),
-	array('label'=>'Update Estado', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Estado', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Estado', 'url'=>array('admin')),
+	array('label'=>'Lista Estado', 'url'=>array('index')),
+	array('label'=>'Crear Estado', 'url'=>array('create')),
+	array('label'=>'Actualizar Estado', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Eliminar Estado', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar Estado', 'url'=>array('admin')),
 );
 ?>
 
