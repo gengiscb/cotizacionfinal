@@ -145,4 +145,8 @@ class Usuario extends CActiveRecord
                 $roles[] = $rol->nombreRol;
             return $roles;
         }
+        
+        public function getNombreCompleto(){
+            return $this->nombres.' '.$this->apellidos;
+        }
 }

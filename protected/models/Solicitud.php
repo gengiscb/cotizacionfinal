@@ -35,7 +35,8 @@ class Solicitud extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('area, proyecto', 'required'),
-			array('usuarioResponsable', 'numerical', 'integerOnly'=>true),
+                        array('id_estado', 'required', 'on'=>'Update'),
+			//array('usuarioResponsable', 'numerical', 'integerOnly'=>true),
 			array('area', 'length', 'max'=>100),
 			array('proyecto', 'length', 'max'=>200),
 			// The following rule is used by search().
@@ -53,7 +54,7 @@ class Solicitud extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'articulos' => array(self::HAS_MANY, 'Articulo', 'id_solicitud'),
-			'usuarioResponsable0' => array(self::BELONGS_TO, 'Usuario', 'usuarioResponsable'),
+			'usuario' => array(self::BELONGS_TO, 'Usuario', 'usuarioResponsable'),
 			'idEstado' => array(self::BELONGS_TO, 'Estado', 'id_estado'),
 		);
 	}
@@ -117,17 +118,9 @@ class Solicitud extends CActiveRecord
         protected function beforeSave() {
         if (parent::beforeSave()) {
             //Yii::app()->user-id devuelve el login del usuario
-            $user = Usuario::model()->find(array(
-                'condition' => 'usuario = :usuario',
-                'params' => array(
-                    ':usuario' => Yii::app()->user->id,
-                ),
-            ));
-            if ($user !== NULL) {
-                $this->usuarioResponsable = $user->id;
-                return TRUE;
-            }
-            return FALSE;
+            if($this->isNewRecord)
+                $this->usuarioResponsable = Yii::app()->user->id;
+            return true;
         }
         return FALSE;
     }

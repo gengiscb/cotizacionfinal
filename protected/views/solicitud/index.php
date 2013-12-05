@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Solicitud', 'url'=>array('create')),
-	array('label'=>'Manage Solicitud', 'url'=>array('admin')),
+	array('label'=>'Crear Solicitud', 'url'=>array('create')),
+	array('label'=>'Administrar Solicitudes', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Solicituds</h1>
+<h1>Solicitudes</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

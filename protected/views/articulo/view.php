@@ -28,10 +28,10 @@ $this->menu=array(
 		'compra',
 		'descripcion',
 		'id_solicitud',
-		'id_proveedor',
+		'idProveedor.nombre',
 		'precio',
 		'tiempo_entrega',
-		'id_garantia',
+		'idGarantia.garantia',
 		'fecha_surtido',
 	),
 )); ?>

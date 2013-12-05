@@ -55,9 +55,11 @@
 		<?php echo $form->error($model,'id_solicitud'); ?>
 	</div>
 
-	<div class="row">
+
+        <div class="row">
+
 		<?php echo $form->labelEx($model,'id_proveedor'); ?>
-		<?php echo $form->textField($model,'id_proveedor'); ?>
+                <?php echo $form->dropDownList($model, 'id_proveedor', CHtml::listData(Proveedor::model()->findAll(array('order'=>'nombre')), 'folio','nombre'), array('empty'=>'Seleccionar..')); ?>
 		<?php echo $form->error($model,'id_proveedor'); ?>
 	</div>
 
@@ -73,9 +75,12 @@
 		<?php echo $form->error($model,'tiempo_entrega'); ?>
 	</div>
 
-	<div class="row">
+
+        
+        <div class="row">
+
 		<?php echo $form->labelEx($model,'id_garantia'); ?>
-		<?php echo $form->textField($model,'id_garantia'); ?>
+                <?php echo $form->dropDownList($model, 'id_garantia', CHtml::listData(Garantia::model()->findAll(array('order'=>'garantia')), 'id','garantia'), array('empty'=>'Seleccionar..')); ?>
 		<?php echo $form->error($model,'id_garantia'); ?>
 	</div>
 
@@ -84,6 +89,7 @@
 		<?php echo $form->textField($model,'fecha_surtido'); ?>
 		<?php echo $form->error($model,'fecha_surtido'); ?>
 	</div>
+        <?php //var_dump(Garantia::model()->findAll(array('order'=>'garantia')));?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

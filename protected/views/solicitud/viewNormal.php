@@ -38,15 +38,7 @@ $this->menu=array(
 <?php foreach ($model->articulos as $articulo): ?>
 <div class="row">
     <div class="articulo">
-        
         <h3><?php echo CHtml::encode($articulo->getAttributeLabel('Articulo')); ?></h3>
-        <h5>id articulo: <?php echo CHtml::link(
-                           $articulo->id,
-                           array(
-                             'articulo/view',
-                              'id'=>$articulo->id,
-                            )
-            );?></h5>
         <div>Descripcion: <?php echo CHtml::encode($articulo->descripcion); ?></div>   
         <div>Cantidad: <?php echo CHtml::encode($articulo->cantidad); ?></div>
         <div>Unidad: <?php echo CHtml::encode($articulo->unidad); ?></div>   

@@ -36,7 +36,7 @@ class ArticuloController extends Controller
 				'roles'=>array('normal'),
 			),
                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('update','admin'),
+				'actions'=>array('update','admin','create'),
 				'roles'=>array('compras'),
 			),
                         array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -80,7 +80,7 @@ class ArticuloController extends Controller
 			$model->attributes=$_POST['Articulo'];
                         $model->id_solicitud=$solicitud;
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('solicitud/view','id'=>$model->id_solicitud=$solicitud));
 		}
 
 		$this->render('create',array(

@@ -40,8 +40,8 @@ class Articulo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cantidad, unidad, cotizacion, compra, descripcion, id_solicitud', 'required'),
-			array('cotizacion, compra, id_solicitud, id_proveedor, id_garantia', 'numerical', 'integerOnly'=>true),
+			array('cantidad, unidad, cotizacion, compra, descripcion, id_solicitud,id_garantia', 'required'),
+			array('cotizacion, compra, id_solicitud, id_proveedor,id_garantia', 'numerical', 'integerOnly'=>true),
 			array('cantidad, tiempo_entrega', 'length', 'max'=>10),
 			array('unidad', 'length', 'max'=>20),
 			array('descripcion', 'length', 'max'=>500),
