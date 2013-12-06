@@ -50,8 +50,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_solicitud'); ?>
-		<?php echo $form->textField($model,'id_solicitud'); ?>
+		
+		<?php echo $form->hiddenField($model,'id_solicitud'); ?>
 		<?php echo $form->error($model,'id_solicitud'); ?>
 	</div>
 

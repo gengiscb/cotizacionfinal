@@ -27,20 +27,21 @@ class SolicitudController extends Controller
 	public function accessRules()
 	{
 		return array(
+                        /*
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('view'),
 				'users'=>array('*'),
-			),
+			),*/
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','index2','finalizarSolicitud'),
+				'actions'=>array('create','index2','finalizarSolicitud','view'),
 				'roles'=>array('normal'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update','create','index','finalizarSolicitud'),
+				'actions'=>array('admin','delete','update','create','index','finalizarSolicitud','view'),
 				'roles'=>array('administrador'),
 			),
                         array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','update','index','finalizarSolicitud','create'),
+				'actions'=>array('admin','update','index','finalizarSolicitud','create','view'),
 				'roles'=>array('compras'),
 			),
 			array('deny',  // deny all users

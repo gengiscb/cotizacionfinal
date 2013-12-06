@@ -104,7 +104,7 @@ class ArticuloController extends Controller
 		{
 			$model->attributes=$_POST['Articulo'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('solicitud/view','id'=>$model->id_solicitud));
 		}
 
 		$this->render('update',array(
